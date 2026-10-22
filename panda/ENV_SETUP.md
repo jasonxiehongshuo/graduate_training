@@ -53,6 +53,61 @@
 - 修复后官方 robosuite 入门脚本（Panda + Lift，1000 步随机动作 + render）可完整运行，退出码 0。
 - 如未来需要 mujoco 3.x（T05 PPO 或新版教程），应同步升级 robosuite 至 1.5.1+（官方要求 mujoco>=3.2.3），不要混搭。
 
+
+---
+
+## 3.2 渲染配置（2026-10-22 重建环境时修正）
+
+**问题**：robosuite 1.4.1 的 `macros_private.py` 默认 `MUJOCO_GPU_RENDERING = True`，
+`binding_utils.py:37` 会在 Linux 下**强制把 `MUJOCO_GL` 改成 `egl`**，无视命令行设置。
+本机 EGL 设备初始化失败，导致 `has_renderer=True` 报
+`Cannot initialize a EGL device display`。
+
+**修正**：编辑
+
+```
+~/miniconda3/envs/panda/lib/python3.10/site-packages/robosuite/macros_private.py
+```
+
+把 `MUJOCO_GPU_RENDERING = True` 改为 `False`。
+
+**注意**：这是对 site-packages 的修改，重装 robosuite 后需重做一次。
+
+**修正后的渲染能力**（WSLg + Mesa D3D12）：
+
+```
+OpenGL renderer: D3D12 (NVIDIA GeForce RTX 3060 Laptop GPU)
+OpenGL version : 4.2 (Compatibility Profile) Mesa 23.2.1
+direct rendering: Yes
+```
+
+两种模式均验证通过：
+
+| 模式 | 命令 | 用途 |
+|---|---|---|
+| 图形窗口 | `MUJOCO_GL=glfw` | 组会演示、录屏 |
+| 无头渲染 | `MUJOCO_GL=egl` | 批量跑数据 |
+
+WSLg 所需系统库（cloud image 需手动装）：
+
+```bash
+sudo apt install -y x11-utils x11-apps mesa-utils libglu1-mesa \
+  libgl1-mesa-dri libglx-mesa0 mesa-vulkan-drivers \
+  libx11-6 libxext6 libxrender1 libxi6 libxcursor1 libxrandr2 libxinerama1 \
+  fonts-dejavu-core
+```
+
+---
+
+## 3.3 系统库依赖（cloud image 必装）
+
+minimal cloud image 缺少 opencv 所需的系统库，否则 `import robosuite` 会报
+`ImportError: libGL.so.1`：
+
+```bash
+sudo apt install -y libgl1 libglib2.0-0 libsm6 libxext6 libxrender1 libgomp1 libegl1 libegl-mesa0
+```
+
 ## 3. T01 自主冒烟测试指引（由学生自主执行）
 
 在终端进入 WSL，激活环境或直接指定环境解释器执行：
