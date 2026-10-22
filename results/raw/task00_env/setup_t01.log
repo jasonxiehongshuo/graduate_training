@@ -1,0 +1,270 @@
+===== 2026-10-20 19:04:36 T01 setup start =====
+--- create env panda (python 3.10, defaults channel only) ---
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.12.0
+  latest version: 26.9.3
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+
+## Package Plan ##
+
+  environment location: /home/xie/miniconda3/envs/panda
+
+  added / updated specs:
+    - pip
+    - python=3.10
+
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      pkgs/main/linux-64::_openmp_mutex-5.1-52_gnu
+  bzip2              pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6
+  ca-certificates    pkgs/main/linux-64::ca-certificates-2026.9.25-h06a4308_0
+  ld_impl_linux-64   pkgs/main/linux-64::ld_impl_linux-64-2.44-h9e0c5a2_3
+  libexpat           pkgs/main/linux-64::libexpat-2.9.0-h7354ed3_0
+  libffi             pkgs/main/linux-64::libffi-3.4.8-h06d3fd0_3
+  libgcc             pkgs/main/linux-64::libgcc-15.2.0-h69a1729_8
+  libgcc-ng          pkgs/main/linux-64::libgcc-ng-15.2.0-h166f726_8
+  libnsl             pkgs/main/linux-64::libnsl-2.0.0-h5eee18b_0
+  libstdcxx          pkgs/main/linux-64::libstdcxx-15.2.0-h39759b7_8
+  libuuid            pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0
+  libxcb             pkgs/main/linux-64::libxcb-1.17.0-h9b100fa_0
+  libzlib            pkgs/main/linux-64::libzlib-1.3.2-h47b2149_0
+  ncurses            pkgs/main/linux-64::ncurses-6.6-hfaaeb4e_0
+  openssl            pkgs/main/linux-64::openssl-3.5.9-h1b28b03_0
+  packaging          pkgs/main/linux-64::packaging-26.3-py310h06a4308_0
+  pip                pkgs/main/noarch::pip-26.2.1-pyhc872135_0
+  pthread-stubs      pkgs/main/linux-64::pthread-stubs-0.3-h47b2149_2
+  python             pkgs/main/linux-64::python-3.10.22-hd9cb797_0
+  readline           pkgs/main/linux-64::readline-8.3-hc2a1206_0
+  setuptools         pkgs/main/linux-64::setuptools-84.0.0-py310h06a4308_0
+  sqlite             pkgs/main/linux-64::sqlite-3.53.4-h795bf6d_0
+  tk                 pkgs/main/linux-64::tk-8.6.15-h54e0aa7_0
+  tzdata             pkgs/main/noarch::tzdata-2026c-he532380_0
+  wheel              pkgs/main/linux-64::wheel-0.48.0-py310h06a4308_0
+  xorg-libx11        pkgs/main/linux-64::xorg-libx11-1.8.13-h65de747_0
+  xorg-libxau        pkgs/main/linux-64::xorg-libxau-1.0.12-h9b100fa_0
+  xorg-libxdmcp      pkgs/main/linux-64::xorg-libxdmcp-1.1.5-h9b100fa_0
+  xorg-xorgproto     pkgs/main/linux-64::xorg-xorgproto-2025.1-h47b2149_0
+  xz                 pkgs/main/linux-64::xz-5.8.4-h140a991_0
+  zlib               pkgs/main/linux-64::zlib-1.3.2-h47b2149_0
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate panda
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+--- pip install robosuite ---
+    Uninstalling setuptools-84.0.0:
+      Successfully uninstalled setuptools-84.0.0
+Successfully installed setuptools-84.2.0
+
+===== 2026-10-20 19:17:02 resume: pip install robosuite =====
+Collecting pynput (from robosuite==1.4.1)
+  Using cached pynput-1.8.2-py2.py3-none-any.whl.metadata (32 kB)
+Collecting termcolor (from robosuite==1.4.1)
+  Using cached termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+Requirement already satisfied: absl-py in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (2.5.1)
+Requirement already satisfied: etils[epath] in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (1.13.0)
+Collecting glfw (from mujoco>=2.3.0->robosuite==1.4.1)
+  Using cached glfw-2.11.0-py2.py3-none-manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Requirement already satisfied: pyopengl in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (3.1.10)
+Requirement already satisfied: websockets>=13 in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (16.1.1)
+Collecting llvmlite<0.51,>=0.50.0dev0 (from numba>=0.49.1->robosuite==1.4.1)
+  Using cached llvmlite-0.50.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+Requirement already satisfied: fsspec in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (2026.9.0)
+Requirement already satisfied: importlib_resources in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (7.1.0)
+Requirement already satisfied: typing_extensions in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.16.0)
+Collecting zipp (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1)
+  Using cached zipp-4.1.1-py3-none-any.whl.metadata (3.6 kB)
+Collecting six (from pynput->robosuite==1.4.1)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting evdev>=1.3 (from pynput->robosuite==1.4.1)
+  Using cached evdev-1.9.3.tar.gz (32 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting python-xlib>=0.17 (from pynput->robosuite==1.4.1)
+  Using cached python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Downloading robosuite-1.4.1-py3-none-any.whl (193.5 MB)
+Terminated
+Requirement already satisfied: etils[epath] in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (1.13.0)
+Collecting glfw (from mujoco>=2.3.0->robosuite==1.4.1)
+  Using cached glfw-2.11.0-py2.py3-none-manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Requirement already satisfied: pyopengl in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (3.1.10)
+Requirement already satisfied: websockets>=13 in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (16.1.1)
+Collecting llvmlite<0.51,>=0.50.0dev0 (from numba>=0.49.1->robosuite==1.4.1)
+  Downloading llvmlite-0.50.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+Requirement already satisfied: fsspec in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (2026.9.0)
+Requirement already satisfied: importlib_resources in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (7.1.0)
+Requirement already satisfied: typing_extensions in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.16.0)
+Collecting zipp (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1)
+  Using cached zipp-4.1.1-py3-none-any.whl.metadata (3.6 kB)
+Collecting six (from pynput->robosuite==1.4.1)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting evdev>=1.3 (from pynput->robosuite==1.4.1)
+  Downloading evdev-1.9.3.tar.gz (32 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting python-xlib>=0.17 (from pynput->robosuite==1.4.1)
+  Downloading python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Downloading robosuite-1.4.1-py3-none-any.whl (193.5 MB)
+Terminated
+----- verify: import -----
+--- versions ---
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'robosuite'
+----- verify: demo_random_action (headless egl, 3s) -----
+Traceback (most recent call last):
+  File "<string>", line 2, in <module>
+ModuleNotFoundError: No module named 'robosuite'
+===== 2026-10-20 19:25:19 done =====
+robosuite        NOT-INSTALLED
+mujoco           NOT-INSTALLED
+numpy            2.2.6
+scipy            NOT-INSTALLED
+numba            NOT-INSTALLED
+Pillow           NOT-INSTALLED
+opencv-python    NOT-INSTALLED
+===== 2026-10-20 19:25:19 T01 setup done =====
+
+===== 2026-10-20 19:25:29 install robosuite (aliyun mirror) =====
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple/
+Collecting robosuite==1.4.1
+  Downloading robosuite-1.4.1-py3-none-any.whl (193.5 MB)
+     ━━━━                                   21.5/193.5 MB 318.4 kB/s eta 0:09:01
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (21.5 MB/193.5 MB, attempt 1)
+  Resuming download robosuite-1.4.1-py3-none-any.whl (21.5 MB/193.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━          148.7/193.5 MB 267.6 kB/s eta 0:02:48
+  WARNING: Connection interrupted while downloading.
+  WARNING: Attempting to resume incomplete download (148.7 MB/193.5 MB, attempt 2)
+  WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='mirrors.aliyun.com', port=443): Read timed out. (read timeout=60.0)")': /pypi/packages/60/2f/bbcdf3130fc2c53c098d8699048724ac14292795dfb671168d1d5013fa03/robosuite-1.4.1-py3-none-any.whl
+  WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='mirrors.aliyun.com', port=443): Read timed out. (read timeout=60.0)")': /pypi/packages/60/2f/bbcdf3130fc2c53c098d8699048724ac14292795dfb671168d1d5013fa03/robosuite-1.4.1-py3-none-any.whl
+EXIT=143
+
+===== 2026-10-20 19:40:51 start install with proxy via official PyPI =====
+Collecting robosuite==1.4.1
+  Using cached robosuite-1.4.1-py3-none-any.whl.metadata (5.6 kB)
+Requirement already satisfied: numpy>=1.13.3 in /home/xie/.local/lib/python3.10/site-packages (from robosuite==1.4.1) (2.2.6)
+Collecting numba>=0.49.1 (from robosuite==1.4.1)
+  Using cached numba-0.68.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (2.8 kB)
+Collecting scipy>=1.2.3 (from robosuite==1.4.1)
+  Using cached scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+Collecting mujoco>=2.3.0 (from robosuite==1.4.1)
+  Using cached mujoco-3.16.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (232 kB)
+Collecting Pillow (from robosuite==1.4.1)
+  Using cached pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting opencv-python (from robosuite==1.4.1)
+  Using cached opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)
+Collecting pynput (from robosuite==1.4.1)
+  Using cached pynput-1.8.2-py2.py3-none-any.whl.metadata (32 kB)
+Collecting termcolor (from robosuite==1.4.1)
+  Using cached termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+Requirement already satisfied: absl-py in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (2.5.1)
+Requirement already satisfied: etils[epath] in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (1.13.0)
+Collecting glfw (from mujoco>=2.3.0->robosuite==1.4.1)
+  Using cached glfw-2.11.0-py2.py3-none-manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Requirement already satisfied: pyopengl in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (3.1.10)
+Requirement already satisfied: websockets>=13 in /home/xie/.local/lib/python3.10/site-packages (from mujoco>=2.3.0->robosuite==1.4.1) (16.1.1)
+Collecting llvmlite<0.51,>=0.50.0dev0 (from numba>=0.49.1->robosuite==1.4.1)
+  Using cached llvmlite-0.50.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.1 kB)
+Requirement already satisfied: fsspec in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (2026.9.0)
+Requirement already satisfied: importlib_resources in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (7.1.0)
+Requirement already satisfied: typing_extensions in /home/xie/.local/lib/python3.10/site-packages (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1) (4.16.0)
+Collecting zipp (from etils[epath]->mujoco>=2.3.0->robosuite==1.4.1)
+  Using cached zipp-4.1.1-py3-none-any.whl.metadata (3.6 kB)
+Collecting six (from pynput->robosuite==1.4.1)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting evdev>=1.3 (from pynput->robosuite==1.4.1)
+  Using cached evdev-1.9.3.tar.gz (32 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting python-xlib>=0.17 (from pynput->robosuite==1.4.1)
+  Using cached python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Downloading robosuite-1.4.1-py3-none-any.whl (193.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━╸              128.8/193.5 MB 445.4 kB/s eta 0:02:26
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (128.8 MB/193.5 MB, attempt 1)
+Resuming download robosuite-1.4.1-py3-none-any.whl (128.8 MB/193.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   185.6/193.5 MB ? eta -:--:--
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (185.6 MB/193.5 MB, attempt 2)
+Resuming download robosuite-1.4.1-py3-none-any.whl (185.6 MB/193.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸  187.2/193.5 MB 70.5 kB/s eta 0:01:30
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (187.2 MB/193.5 MB, attempt 3)
+Resuming download robosuite-1.4.1-py3-none-any.whl (187.2 MB/193.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.5/193.5 MB 178.8 kB/s  0:01:06
+Downloading mujoco-3.16.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (30.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 30.4/30.4 MB 328.9 kB/s  0:04:44
+Downloading numba-0.68.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (3.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 333.9 kB/s  0:00:12
+Downloading llvmlite-0.50.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (59.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━               39.3/59.7 MB 85.7 kB/s eta 0:03:59
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (39.3 MB/59.7 MB, attempt 1)
+Resuming download llvmlite-0.50.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (39.3 MB/59.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.7/59.7 MB 350.2 kB/s  0:01:08
+Downloading scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (37.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━      33.0/37.7 MB 333.8 kB/s eta 0:00:14
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (33.0 MB/37.7 MB, attempt 1)
+Resuming download scipy-1.15.3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (33.0 MB/37.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 37.7/37.7 MB 339.8 kB/s  0:00:13
+Using cached glfw-2.11.0-py2.py3-none-manylinux_2_28_x86_64.whl (248 kB)
+Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl (73.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━╸               47.9/73.8 MB ? eta -:--:--
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (47.9 MB/73.8 MB, attempt 1)
+Resuming download opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl (47.9 MB/73.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.8/73.8 MB 326.1 kB/s  0:01:46
+Downloading pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸ 6.9/6.9 MB 3.9 kB/s eta 0:00:16
+WARNING: Connection interrupted while downloading.
+WARNING: Attempting to resume incomplete download (6.9 MB/6.9 MB, attempt 1)
+Resuming download pillow-12.3.0-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB/6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 15.9 kB/s  0:00:03
+Downloading pynput-1.8.2-py2.py3-none-any.whl (92 kB)
+Downloading python_xlib-0.33-py2.py3-none-any.whl (182 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+Using cached zipp-4.1.1-py3-none-any.whl (10 kB)
+Building wheels for collected packages: evdev
+  Building wheel for evdev (pyproject.toml): started
+  Building wheel for evdev (pyproject.toml): finished with status 'done'
+  Created wheel for evdev: filename=evdev-1.9.3-cp310-cp310-linux_x86_64.whl size=74316 sha256=37f370c165188d17f70b713306be341ee0a645bd6b9759f78bcb059634fa24fa
+  Stored in directory: /home/xie/.cache/pip/wheels/68/70/b4/3fc7b36d0009ccf99b44add24b4bb0427f802ca6f9e525c3be
+Successfully built evdev
+Installing collected packages: glfw, zipp, termcolor, six, scipy, Pillow, opencv-python, llvmlite, evdev, python-xlib, numba, pynput, mujoco, robosuite
+
+Successfully installed Pillow-12.3.0 evdev-1.9.3 glfw-2.11.0 llvmlite-0.50.0 mujoco-3.16.0 numba-0.68.0 opencv-python-5.0.0.93 pynput-1.8.2 python-xlib-0.33 robosuite-1.4.1 scipy-1.15.3 six-1.17.0 termcolor-3.3.0 zipp-4.1.1
