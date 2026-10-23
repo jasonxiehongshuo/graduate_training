@@ -55,7 +55,7 @@ def run_episode(env, seed=0):
     for i in range(env.horizon):
         action = np.random.uniform(-1, 1, env.action_dim)
         obs, reward, done, info = env.step(action)
-        rec["t"].append(env.timestep * (i + 1))
+        rec["t"].append(env.cur_time)  # 累计仿真时间(秒)，非步数累乘
         rec["cube_z"].append(float(env.sim.data.body_xpos[cube_id][2]))
         rec["eef_z"].append(float(obs["robot0_eef_pos"][2]))
         rec["reward"].append(float(reward))

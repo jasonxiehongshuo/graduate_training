@@ -4,6 +4,7 @@ cycler==0.12.1
 evdev==1.9.3
 fonttools==4.65.0
 glfw==2.11.0
+h5py==3.16.0
 kiwisolver==1.5.1
 llvmlite==0.50.0
 matplotlib==3.10.9
